@@ -2,7 +2,7 @@
 TouhouRPC is a program that creates a Discord Rich Presence status for Touhou games. 
 
 ## 汉化版支持
-加入了部分汉化的支持，程序通过进程名称识别游戏，如果你发现了无法识别的汉化版，你可以开个issues告诉我或者在`GameDetector.h`中自行添加
+加入了部分汉化的支持，程序通过进程名称识别游戏，如果你发现了无法识别的汉化版，你可以开个issue告诉我或者在`GameDetector.h`中自行添加
 
 ## DLL files
 Make sure the *discord_game_sdk.dll* file is in the same folder as the *TouhouRPC.exe* executable before executing it. If it doesn't, an error message will show up and the program will close.  
