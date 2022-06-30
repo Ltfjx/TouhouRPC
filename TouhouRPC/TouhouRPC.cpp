@@ -30,6 +30,7 @@
 #include "DiscordRPC.h"
 #include "GameDetector.h"
 #include "games/TouhouBase.h"
+#include "TextOutput.h"
 
 using namespace std;
 
@@ -37,6 +38,8 @@ namespace {
     volatile bool interrupted{ false };
     int discordLastErrorType{ -1 };
 }
+
+
 
 DiscordRPC getDiscord(int64_t clientID) {
     logSystem->print(Log::LOG_INFO, "Connecting to the Discord client...");
@@ -63,13 +66,16 @@ std::unique_ptr<TouhouBase> getTouhouGame() {
     return d;
 }
 
-bool touhouUpdate(std::unique_ptr<TouhouBase>& touhouGame, DiscordRPC& discord)
+
+
+bool touhouUpdate(std::unique_ptr<TouhouBase>& touhouGame)
 {
     if (touhouGame->isStillRunning())
     {
         // Update data in Touhou class
         touhouGame->readDataFromGameProcess();
         bool const stateHasChanged = touhouGame->stateHasChangedSinceLastCheck();
+        TO_StateHasChanged = stateHasChanged;
 
         // Get data from Touhou class
         string gameName;
@@ -85,7 +91,10 @@ bool touhouUpdate(std::unique_ptr<TouhouBase>& touhouGame, DiscordRPC& discord)
         touhouGame->setSmallImageInfo(smallImageIcon, smallImageText);
 
         // Update RPC data, always needs to run
-        discord.setActivityDetails(gameName, gameInfo, largeImageIcon, largeImageText, smallImageIcon, smallImageText);
+        //discord.setActivityDetails(gameName, gameInfo, largeImageIcon, largeImageText, smallImageIcon, smallImageText);
+
+        //
+        TextOutput::OutputText(gameName, gameInfo, largeImageIcon, largeImageText, smallImageIcon, smallImageText);
 
         return stateHasChanged;
     }
@@ -96,6 +105,9 @@ bool touhouUpdate(std::unique_ptr<TouhouBase>& touhouGame, DiscordRPC& discord)
 void programClose() {
     logSystem->print(Log::LOG_INFO, "User asked to close the program. Exiting...");
     logSystem->closeLogFile();
+    fstream fout("E:\\OBS_Scene\\THRPC_Output.txt", ofstream::out);
+    fout << "游戏未运行" ;
+    fout << flush; fout.close();
 }
 
 
@@ -164,7 +176,7 @@ int main(int argc, char** argv)
     std::unique_ptr<TouhouBase> touhouGame = getTouhouGame();
 
     // GET DISCORD LINK
-    DiscordRPC discord = getDiscord(touhouGame->getClientId());
+    /*DiscordRPC discord = getDiscord(touhouGame->getClientId());
     if (!discord.isLaunched())
     {
         logSystem->print(Log::LOG_ERROR, "Discord is not running. Exiting program...");
@@ -173,6 +185,7 @@ int main(int argc, char** argv)
     }
     
     logSystem->print(Log::LOG_DEBUG, "Starting Discord Rich Presence display...");
+    */
     
     // MAIN LOOP
 
@@ -182,12 +195,12 @@ int main(int argc, char** argv)
     int regularUpdateTickCount = ticksBetweenRegularUpdates;
 
     do {
-        discord::Result res = discord.tickUpdate(msBetweenTicks);
+        //discord::Result res = discord.tickUpdate(msBetweenTicks);
 
-        if (res != discord::Result::Ok)
+        /*if (res != discord::Result::Ok)
         {
             DiscordRPC::showError(res, discordLastErrorType);
-            discord = getDiscord(touhouGame->getClientId());
+            //discord = getDiscord(touhouGame->getClientId());
             
             if (touhouUpdate(touhouGame, discord) && touhouGame->isStillRunning())
             {
@@ -195,8 +208,9 @@ int main(int argc, char** argv)
             }
         }
         else {
+        */
             bool forceSend = regularUpdateTickCount >= ticksBetweenRegularUpdates;
-            bool const touhouUpdated = touhouUpdate(touhouGame, discord);
+            bool const touhouUpdated = touhouUpdate(touhouGame);
             bool running = touhouGame->isStillRunning();
             if (running && (touhouUpdated || forceSend))
             {
@@ -205,25 +219,29 @@ int main(int argc, char** argv)
                 {
                     forceSend = true;
                 }
-                discord.sendPresence(forceSend);
+                //discord.sendPresence(forceSend);
                 if (forceSend)
                 {
                     regularUpdateTickCount = 0;
                 }
             }
             regularUpdateTickCount++;
-        }
+        //}
 
         if (!touhouGame->isStillRunning()) {
 
             // Presence reset
-            discord.resetPresence();
-            discord.closeApp();
+            //discord.resetPresence();
+            //discord.closeApp();
 
             logSystem->print(Log::LOG_INFO, "Game closed. Ready to find another supported game.");
+
+            fstream fout("E:\\OBS_Scene\\THRPC_Output.txt", ofstream::out);
+            fout << "游戏未运行";
+            fout << flush; fout.close();
             
             touhouGame = getTouhouGame();
-            discord = getDiscord(touhouGame->getClientId());
+            //discord = getDiscord(touhouGame->getClientId());
 
             logSystem->print(Log::LOG_DEBUG, "Starting Discord Rich Presence display...");
         }

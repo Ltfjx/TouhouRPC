@@ -1,4 +1,4 @@
-﻿#include "Touhou13.h"
+#include "Touhou13.h"
 #include <iostream>
 
 namespace Touhou13
@@ -219,13 +219,13 @@ std::string Touhou13::getMidbossName() const
 {
 	switch (stage)
 	{
-	case 1: return "\"Divine spirit\"";
-	case 2: return "Kyouko Kasodani";
-	case 3: return "Kogasa Tatara";
-	case 4: return "Seiga Kaku‎";
-	case 5: return "Soga no Tojiko";
+	case 1: return "中幽灵";
+	case 2: return "幽谷响子";
+	case 3: return "多多良小伞";
+	case 4: return "霍青娥‎";
+	case 5: return "苏我屠自古";
 	// case 6: none
-	case 7: return "Nue Houjuu";
+	case 7: return "封兽鵺";
 	default: return "";
 	}
 }
@@ -234,13 +234,13 @@ std::string Touhou13::getBossName() const
 {
 	switch (stage)
 	{
-	case 1: return "Yuyuko Saigyouji";
-	case 2: return "Kyouko Kasodani";
-	case 3: return "Yoshika Miyako‎";
-	case 4: return "Seiga Kaku";
-	case 5: return "Mononobe no Futo";
-	case 6: return "Toyosatomimi no Miko";
-	case 7: return "Mamizou Futatsuiwa";
+	case 1: return "西行寺幽幽子";
+	case 2: return "幽谷响子";
+	case 3: return "宫古芳香";
+	case 4: return "霍青娥";
+	case 5: return "物部布都";
+	case 6: return "丰聪耳神子";
+	case 7: return "二岩猯藏";
 	default: return "";
 	}
 }

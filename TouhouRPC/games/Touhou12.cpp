@@ -198,12 +198,12 @@ std::string Touhou12::getMidbossName() const
 	switch (stage)
 	{
 	case 1:
-	case 5: return "Nazrin";
-	case 2: return "Kogasa Tatara";
-	case 3: return "Ichirin Kumoi & Unzan";
+	case 5: return "娜兹玲";
+	case 2: return "多多良小伞";
+	case 3: return "云居一轮 & 云山";
 	case 4:
-	case 6: return "Nue Houjuu (Unknown Form)";
-	case 7: return "Kogasa Tatara";
+	case 6: return "不明光球";
+	case 7: return "多多良小伞";
 	default: return "";
 	}
 }
@@ -212,13 +212,13 @@ std::string Touhou12::getBossName() const
 {
 	switch (stage)
 	{
-	case 1: return "Nazrin";
-	case 2: return "Kogasa Tatara";
-	case 3: return "Ichirin Kumoi & Unzan";
-	case 4: return "Minamitsu Murasa";
-	case 5: return "Shou Toramaru";
-	case 6: return "Byakuren Hijiri";
-	case 7: return "Nue Houjuu";
+	case 1: return "娜兹玲";
+	case 2: return "多多良小伞";
+	case 3: return "云居一轮 & 云山";
+	case 4: return "村纱水蜜";
+	case 5: return "寅丸星";
+	case 6: return "圣白莲";
+	case 7: return "封兽鵺";
 	default: return "";
 	}
 }

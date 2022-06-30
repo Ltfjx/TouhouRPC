@@ -6,6 +6,7 @@
 #include <memoryapi.h>
 #include <TlHelp32.h>
 #include <handleapi.h>
+#include <fstream>
 
 
 class TouhouBase

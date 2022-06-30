@@ -13,7 +13,7 @@ public:
 
 	// Inherited from TouhouBase
 	int64_t getClientId() const override { return 712067875757752442; };
-	const char* getGameName() const override { return "Touhou 11 - Subterranean Animism"; }
+	const char* getGameName() const override { return "東方地霊殿　～ Subterranean Animism."; }
 
 	void readDataFromGameProcess() override;
 

@@ -263,13 +263,13 @@ std::string Touhou11::getMidbossName() const
 {
 	switch (stage)
 	{
-	case 1: return "Kisume";
-	case 2: return "Parsee Mizuhashi";
-	case 3: return "Yuugi Hoshiguma";
+	case 1: return "琪斯美";
+	case 2: return "水桥帕露西";
+	case 3: return "星熊勇仪";
 	case 4:
 	case 5:
-	case 6: return "Rin Kaenbyou";
-	case 7: return "Sanae Kochiya";
+	case 6: return "火焰猫燐";
+	case 7: return "东风谷早苗";
 	default: return "";
 	}
 }
@@ -278,13 +278,13 @@ std::string Touhou11::getBossName() const
 {
 	switch (stage)
 	{
-	case 1: return "Yamame Kurodani";
-	case 2: return "Parsee Mizuhashi";
-	case 3: return "Yuugi Hoshiguma";
-	case 4: return "Satori Komeiji";
-	case 5: return "Rin Kaenbyou";
-	case 6: return "Utsuho Reiuji";
-	case 7: return "Koishi Komeiji";
+	case 1: return "黑谷山女";
+	case 2: return "水桥帕露西";
+	case 3: return "星熊勇仪";
+	case 4: return "古明地觉";
+	case 5: return "火焰猫燐";
+	case 6: return "灵乌路空";
+	case 7: return "古明地恋";
 	default: return "";
 	}
 }

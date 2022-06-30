@@ -20,7 +20,7 @@ public:
 
 	// Inherited from TouhouBase
 	int64_t getClientId() const override { return 717460728990139023; };
-	const char* getGameName() const override { return "Touhou 09 - Phantasmagoria of Flower View"; }
+	const char* getGameName() const override { return "東方花映塚　～ Phantasmagoria of Flower View."; }
 
 	void readDataFromGameProcess() override;
 

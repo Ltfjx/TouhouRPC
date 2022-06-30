@@ -237,13 +237,13 @@ std::string Touhou17::getMidbossName() const
 {
 	switch (stage)
 	{
-	case 1: return "Eika Ebisu";
-	case 2: return "Urumi Ushizaki";
+	case 1: return "戎璎花";
+	case 2: return "牛崎润美";
 	case 7:
-	case 3: return "Kutaka Niwatari";
-	case 4: return "Yachie Kicchou";
+	case 3: return "庭渡久侘歌";
+	case 4: return "吉吊八千慧";
 	case 5:
-	case 6: return "Mayumi Joutouguu";
+	case 6: return "杖刀偶磨弓";
 	default: return "";
 	}
 }
@@ -252,13 +252,13 @@ std::string Touhou17::getBossName() const
 {
 	switch (stage)
 	{
-	case 1: return "Eika Ebisu";
-	case 2: return "Urumi Ushizaki";
-	case 3: return "Kutaka Niwatari";
-	case 4: return "Yachie Kicchou";
-	case 5: return "Mayumi Joutouguu";
-	case 6: return "Keiki Haniyasushin";
-	case 7: return "Saki Kurokoma";
+	case 1: return "戎璎花";
+	case 2: return "牛崎润美";
+	case 3: return "庭渡久侘歌";
+	case 4: return "吉吊八千慧";
+	case 5: return "杖刀偶磨弓";
+	case 6: return "埴安神袿姬";
+	case 7: return "骊驹早鬼";
 	default: return "";
 	}
 }

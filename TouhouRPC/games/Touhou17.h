@@ -25,7 +25,7 @@ public:
 
 	// Inherited from TouhouBase
 	int64_t getClientId() const override { return 712071166143234109; };
-	const char* getGameName() const override { return "Touhou 17 - Wily Beast and Weakest Creature"; }
+	const char* getGameName() const override { return "東方鬼形獣　～ Wily Beast and Weakest Creature."; }
 
 	void readDataFromGameProcess() override;
 

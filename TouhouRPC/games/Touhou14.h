@@ -22,7 +22,7 @@ public:
 
 	// Inherited from TouhouBase
 	int64_t getClientId() const override { return 709074475789844602; };
-	const char* getGameName() const override { return "Touhou 14 - Double Dealing Character"; }
+	const char* getGameName() const override { return "東方輝針城　～ Double Dealing Character."; }
 
 	void readDataFromGameProcess() override;
 

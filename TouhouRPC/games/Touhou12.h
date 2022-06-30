@@ -13,7 +13,7 @@ public:
 
 	// Inherited from TouhouBase
 	int64_t getClientId() const override { return 716678778755219508; };
-	const char* getGameName() const override { return "Touhou 12 - Undefined Fantastic Object"; }
+	const char* getGameName() const override { return "東方星蓮船　～ Undefined Fantastic Object."; }
 
 	void readDataFromGameProcess() override;
 

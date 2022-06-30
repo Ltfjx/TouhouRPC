@@ -1,6 +1,9 @@
 #include "TouhouMainGameBase.h"
 
 #include "../Log.h"
+#include "../TextOutput.h"
+
+
 
 TouhouMainGameBase::TouhouMainGameBase(PROCESSENTRY32W const& pe32)
 	: TouhouBase(pe32)
@@ -68,26 +71,36 @@ void TouhouMainGameBase::setGameName(std::string & name) const
 	{
 		switch (state.mainMenuState)
 		{
-		case MainMenuState::TitleScreen: name = "On the title screen"; break;
+		case MainMenuState::TitleScreen: name = "主菜单"; break;
 		case MainMenuState::GameStart:
-		case MainMenuState::GameStart_Custom: name = "Preparing to play"; break;
-		case MainMenuState::ExtraStart: name = "Preparing to play Extra"; break;
-		case MainMenuState::StagePractice: name = "Selecting a stage to practice"; break;
-		case MainMenuState::SpellPractice: name = "Selecting a spell to practice"; break;
-		case MainMenuState::Replays: name = "Selecting a replay"; break;
-		case MainMenuState::PlayerData: name = "Viewing player data"; break;
-		case MainMenuState::Achievements: name = "Viewing achievements"; break;
-		case MainMenuState::AbilityCards: name = "Viewing ability cards"; break;
-		case MainMenuState::MusicRoom: name = "In the music room:"; break; // game info will specify track.
-		case MainMenuState::Options: name = "Changing options"; break;
-		case MainMenuState::Manual: name = "Viewing the manual"; break;
+		case MainMenuState::GameStart_Custom: name = "准备中"; break;
+		case MainMenuState::ExtraStart: name = "Extra准备中"; break;
+		case MainMenuState::StagePractice: name = "选择练习面数"; break;
+		case MainMenuState::SpellPractice: name = "选择练习符卡"; break;
+		case MainMenuState::Replays: name = "选择replay"; break;
+		case MainMenuState::PlayerData: name = "查看玩家数据"; break;
+		case MainMenuState::Achievements: name = "查看成就"; break;
+		case MainMenuState::AbilityCards: name = "查看卡牌"; break;
+		case MainMenuState::MusicRoom: name = "音乐室："; break; // game info will specify track.
+		case MainMenuState::Options: name = "修改设置"; break;
+		case MainMenuState::Manual: name = "查看手册"; break;
 		}
 		break;
 	}
 
 	case GameState::GameOver:
 	{
-		name = ("Game over");
+		std::string AppendText;
+		
+		if (TO_StateHasChanged) { FailRandom=rand() % 5; }
+		switch (FailRandom) {
+		case 0:AppendText = "寄"; break;
+		case 1:AppendText = "这么菜就别打了"; break;
+		case 2:AppendText = "下播，请"; break;
+		case 3:AppendText = "菜逼"; break;
+		case 4:AppendText = "打的还不如土豆"; break;
+		}
+		name = AppendText;
 		break;
 	}
 
@@ -95,15 +108,14 @@ void TouhouMainGameBase::setGameName(std::string & name) const
 	{
 		// Scene-based games: Completion of a scene
 		name = getStageName();
-		name.append(" completed!");
+		name.append(" 完成");
 		break;
 	}
 
 	case GameState::Fail:
 	{
 		// Scene-based games: Failing completion of a scene
-		name = getStageName();
-		name.append(" failed...");
+		name.append(" 寄");
 		break;
 	}
 
@@ -227,14 +239,14 @@ void TouhouMainGameBase::setGameInfo(std::string & info) const
 		}
 		case StageState::Midboss:
 		{
-			info = "Fighting ";
+			info = "道中Boss：";
 			info.append(getMidbossName());
 			break;
 		}
 
 		case StageState::Boss:
 		{
-			info = "Fighting ";
+			info = "Boss：";
 			info.append(getBossName());
 			break;
 		}
@@ -255,146 +267,146 @@ void TouhouMainGameBase::setLargeImageInfo(std::string & icon, std::string & tex
 		return;
 	}
 
-	text = "Shot: ";
+	text = "机体：";
 
 	switch (state.character)
 	{
 	case Character::Reimu:
 	{
-		icon.append("reimu"), text.append("Reimu");
+		icon.append("reimu"), text.append("博丽灵梦");
 		break;
 	}
 	case Character::Marisa:
 	{
-		icon.append("marisa"), text.append("Marisa");
+		icon.append("marisa"), text.append("雾雨魔理沙");
 		break;
 	}
 	case Character::Sakuya:
 	{
-		icon.append("sakuya"), text.append("Sakuya");
+		icon.append("sakuya"), text.append("十六夜咲夜");
 		break;
 	}
 	case Character::Sanae:
 	{
-		icon.append("sanae"), text.append("Sanae");
+		icon.append("sanae"), text.append("东风谷早苗");
 		break;
 	}
 	case Character::Youmu:
 	{
-		icon.append("youmu"), text.append("Youmu");
+		icon.append("youmu"), text.append("魂魄妖梦");
 		break;
 	}
 	case Character::Reisen:
 	{
-		icon.append("reisen"), text.append("Reisen");
+		icon.append("reisen"), text.append("铃仙·优昙华院·因幡");
 		break;
 	}
 	case Character::Cirno:
 	{
-		icon.append("cirno"), text.append("Cirno");
+		icon.append("cirno"), text.append("琪露诺");
 		break;
 	}
 	case Character::Aya:
 	{
-		icon.append("aya"), text.append("Aya");
+		icon.append("aya"), text.append("射命丸文");
 		break;
 	}
 
 	// IN Teams
 	case Character::Border:
 	{
-		icon.append("border"), text.append("Illusionary Barrier");
+		icon.append("border"), text.append("幻想结界");
 		break;
 	}
 	case Character::Magic:
 	{
-		icon.append("magic"), text.append("Aria of Forbidden Magic");
+		icon.append("magic"), text.append("禁咒咏唱");
 		break;
 	}
 	case Character::Scarlet:
 	{
-		icon.append("scarlet"), text.append("Visionary Scarlet Devil");
+		icon.append("scarlet"), text.append("梦幻红魔");
 		break;
 	}
 	case Character::Nether:
 	{
-		icon.append("nether"), text.append("Netherworld Dwellers's");
+		icon.append("nether"), text.append("幽冥住人");
 		break;
 	}
 	
 	// IN Solo
 	case Character::Yukari:
 	{
-		icon.append("yukari"), text.append("Yukari");
+		icon.append("yukari"), text.append("八云紫");
 		break;
 	}
 	case Character::Alice:
 	{
-		icon.append("alice"), text.append("Alice");
+		icon.append("alice"), text.append("爱丽丝");
 		break;
 	}
 	case Character::Remilia:
 	{
-		icon.append("remilia"), text.append("Remilia");
+		icon.append("remilia"), text.append("蕾米莉亚");
 		break;
 	}
 	case Character::Yuyuko:
 	{
-		icon.append("yuyuko"), text.append("Yuyuko");
+		icon.append("yuyuko"), text.append("西行寺幽幽子");
 		break;
 	}
 
 	// PoFV
 	case Character::Lyrica:
 	{
-		icon.append("lyrica"), text.append("Lyrica");
+		icon.append("lyrica"), text.append("莉莉卡");
 		break;
 	}
 	case Character::Merlin:
 	{
-		icon.append("merlin"), text.append("Merlin");
+		icon.append("merlin"), text.append("梅露兰");
 		break;
 	}
 	case Character::Lunasa:
 	{
-		icon.append("lunasa"), text.append("Lunasa");
+		icon.append("lunasa"), text.append("露娜萨");
 		break;
 	}
 	case Character::Mystia:
 	{
-		icon.append("mystia"), text.append("Mystia");
+		icon.append("mystia"), text.append("米斯蒂娅");
 		break;
 	}
 	case Character::Tewi:
 	{
-		icon.append("tewi"), text.append("Tewi");
+		icon.append("tewi"), text.append("因幡帝");
 		break;
 	}
 	case Character::Yuuka:
 	{
-		icon.append("yuuka"), text.append("Yuuka");
+		icon.append("yuuka"), text.append("风见幽香");
 		break;
 	}
 	case Character::Medicine:
 	{
-		icon.append("medicine"), text.append("Medicine");
+		icon.append("medicine"), text.append("梅蒂欣");
 		break;
 	}
 	case Character::Komachi:
 	{
-		icon.append("komachi"), text.append("Komachi");
+		icon.append("komachi"), text.append("小野塚小町");
 		break;
 	}
 	case Character::Eiki:
 	{
-		icon.append("eiki"), text.append("Eiki");
+		icon.append("eiki"), text.append("四季映姬");
 		break;
 	}
 
 	// ISC
 	case Character::Seija:
 	{
-		icon.append("seija"), text.append("Seija");
+		icon.append("seija"), text.append("鬼人正邪");
 		break;
 	}
 	}
@@ -407,12 +419,12 @@ void TouhouMainGameBase::setLargeImageInfo(std::string & icon, std::string & tex
 	}
 	case SubCharacter::Team:
 	{
-		text.append(" Team");
+		text.append("组");
 		break;
 	}
 	case SubCharacter::Solo:
 	{
-		text.append(" Solo");
+		text.append("");//如果yyc选择了单人自机（Solo），则直接显示机体名
 		break;
 	}
 	case SubCharacter::AltColour:
@@ -449,71 +461,71 @@ void TouhouMainGameBase::setLargeImageInfo(std::string & icon, std::string & tex
 	// SA partners
 	case SubCharacter::AndYukari:
 	{
-		text.append(" + Yukari");
+		text.append(" + 八云紫");
 		break;
 	}
 	case SubCharacter::AndSuika:
 	{
-		text.append(" + Suika");
+		text.append(" + 伊吹萃香");
 		break;
 	}
 	case SubCharacter::AndAya:
 	{
-		text.append(" + Aya");
+		text.append(" + 射命丸文");
 		break;
 	}
 	case SubCharacter::AndAlice:
 	{
-		text.append(" + Alice");
+		text.append(" + 爱丽丝");
 		break;
 	}
 	case SubCharacter::AndPatchouli:
 	{
-		text.append(" + Patchouli");
+		text.append(" + 帕秋莉");
 		break;
 	}
 	case SubCharacter::AndNitori:
 	{
-		text.append(" + Nitori");
+		text.append(" + 河城荷取");
 		break;
 	}
 
 	// HSiFS seasons
 	case SubCharacter::Spring:
 	{
-		text.append(" (Spring)");
+		text.append(" (春)");
 		break;
 	}
 	case SubCharacter::Summer:
 	{
-		text.append(" (Summer)");
+		text.append(" (夏)");
 		break;
 	}
 	case SubCharacter::Fall:
 	{
-		text.append(" (Fall)");
+		text.append(" (秋)");
 		break;
 	}
 	case SubCharacter::Winter:
 	{
-		text.append(" (Winter)");
+		text.append(" (冬)");
 		break;
 	}
 
 	// WBaWC beasts
 	case SubCharacter::Wolf:
 	{
-		text.append(" (Wolf)");
+		text.append(" (野狼灵)");
 		break;
 	}
 	case SubCharacter::Otter:
 	{
-		text.append(" (Otter)");
+		text.append(" (水獭灵)");
 		break;
 	}
 	case SubCharacter::Eagle:
 	{
-		text.append(" (Eagle)");
+		text.append(" (大鹫灵)");
 		break;
 	}
 	}
@@ -524,7 +536,7 @@ void TouhouMainGameBase::setSmallImageInfo(std::string & icon, std::string & tex
 	icon.clear(), text.clear();
 	if (shouldShowCoverIcon()) return;
 
-	text = "Difficulty: ";
+	text = "难度：";
 	switch (state.difficulty)
 	{
 	case Difficulty::NoDifficultySettings:

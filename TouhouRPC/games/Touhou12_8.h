@@ -33,7 +33,7 @@ public:
 
 	// Inherited from TouhouBase
 	int64_t getClientId() const override { return 717045124076405239; };
-	const char* getGameName() const override { return "Touhou 12.8 - Fairy Wars"; }
+	const char* getGameName() const override { return "妖精大戦争　～ 東方三月精"; }
 
 	void readDataFromGameProcess() override;
 

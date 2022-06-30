@@ -15,7 +15,7 @@ public:
 
 	// Inherited from TouhouBase
 	int64_t getClientId() const override { return 712067805398171658; };
-	const char* getGameName() const override { return "Touhou 06 - Embodiment of Scarlet Devil"; }
+	const char* getGameName() const override { return "東方紅魔郷　～ the Embodiment of Scarlet Devil."; }
 
 	virtual void readDataFromGameProcess() override;
 

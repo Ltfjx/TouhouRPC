@@ -1,4 +1,4 @@
-﻿#include "Touhou14.h"
+#include "Touhou14.h"
 #include <iostream>
 
 namespace Touhou14
@@ -226,13 +226,13 @@ std::string Touhou14::getMidbossName() const
 {
 	switch (stage)
 	{
-	case 1: return "Cirno";
-	case 2: return "Sekibanki";
-	case 3: return "Kagerou Imaizumi";
-	case 4: return (state.subCharacter == SubCharacter::A_DistinctIcons) ? "Yatsuhashi Tsukumo" : "Benben Tsukumo";
+	case 1: return "琪露诺";
+	case 2: return "赤蛮奇";
+	case 3: return "今泉影狼";
+	case 4: return (state.subCharacter == SubCharacter::A_DistinctIcons) ? "九十九八桥" : "九十九弁弁";
 	case 5:
-	case 6: return "Seija Kijin";
-	case 7: return "Benben & Yatsuhashi Tsukumo";
+	case 6: return "鬼人正邪";
+	case 7: return "九十九姐妹";
 	default: return "";
 	}
 }
@@ -241,13 +241,13 @@ std::string Touhou14::getBossName() const
 {
 	switch (stage)
 	{
-	case 1: return "Wakasagihime";
-	case 2: return "Sekibanki";
-	case 3: return "Kagerou Imaizumi";
-	case 4: return (state.subCharacter == SubCharacter::A_DistinctIcons) ? "Benben Tsukumo" : "Yatsuhashi Tsukumo";
-	case 5: return "Seija Kijin";
-	case 6: return "Shinmyoumaru Sukuna";
-	case 7: return "Raiko Horikawa";
+	case 1: return "若鹭姬";
+	case 2: return "赤蛮奇";
+	case 3: return "今泉影狼";
+	case 4: return (state.subCharacter == SubCharacter::A_DistinctIcons) ? "九十九弁弁" : "九十九八桥";
+	case 5: return "鬼人正邪";
+	case 6: return "少名针妙丸";
+	case 7: return "堀川雷鼓";
 	default: return "";
 	}
 }

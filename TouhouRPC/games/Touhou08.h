@@ -13,7 +13,7 @@ public:
 
 	// Inherited from TouhouBase
 	int64_t getClientId() const override { return 712068017172905984; };
-	const char* getGameName() const override { return "Touhou 08 - Imperishable Night"; }
+	const char* getGameName() const override { return "東方永夜抄　～ Imperishable Night."; }
 
 	void readDataFromGameProcess() override;
 
@@ -46,26 +46,26 @@ protected:
 
 	// screw stage 5, 6B, extra for having a different midboss than boss
 	const std::string midBossName[9] = {
-		"Wriggle Nightbug",
-		"Mystia Lorelei",
-		"Keine Kamishirasawa",
-		"Reimu Hakurei",
-		"Marisa Kirisame",
-		"Tewi Inaba",
-		"Eirin Yagokoro",
-		"Eirin Yagokoro",
-		"Keine Kamishirasawa"
+		"莉格露·奈特巴格",
+		"米斯蒂娅·萝蕾拉",
+		"上白泽慧音",
+		"博丽灵梦",
+		"雾雨魔理沙",
+		"因幡天为",
+		"八意永琳",
+		"八意永琳",
+		"上白泽慧音"
 	};
 	const std::string bossName[9] = {
-		"Wriggle Nightbug",
-		"Mystia Lorelei",
-		"Keine Kamishirasawa",
-		"Reimu Hakurei",
-		"Marisa Kirisame",
-		"Reisen Udongein Inaba",
-		"Eirin Yagokoro",
-		"Kaguya Houraisan",
-		"Fujiwara no Mokou"
+		"莉格露·奈特巴格",
+		"米斯蒂娅·萝蕾拉",
+		"上白泽慧音",
+		"博丽灵梦",
+		"雾雨魔理沙",
+		"铃仙·优昙华院",
+		"八意永琳",
+		"蓬莱山辉夜",
+		"藤原妹红"
 	};
 
 private:

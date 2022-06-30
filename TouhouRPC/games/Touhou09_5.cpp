@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include "Touhou09_5.h"
 
 namespace Touhou09_5

@@ -194,13 +194,13 @@ std::string Touhou10::getMidbossName() const
 {
 	switch (stage)
 	{
-	case 1: return "Shizuha Aki";
-	case 2: return "Hina Kagiyama";
-	case 3: return "Nitori Kawashiro";
-	case 4: return "Momiji Inubashiri";
-	case 5: return "Sanae Kochiya";
+	case 1: return "秋静叶";
+	case 2: return "键山雏";
+	case 3: return "河城荷取";
+	case 4: return "犬走椛";
+	case 5: return "东风谷早苗";
 	// case 6: none
-	case 7: return "Kanako Yasaka";
+	case 7: return "八坂神奈子";
 	default: return "";
 	}
 }
@@ -209,13 +209,13 @@ std::string Touhou10::getBossName() const
 {
 	switch (stage)
 	{
-	case 1: return "Minoriko Aki";
-	case 2: return "Hina Kagiyama";
-	case 3: return "Nitori Kawashiro";
-	case 4: return "Aya Shameimaru";
-	case 5: return "Sanae Kochiya";
-	case 6: return "Kanako Yasaka";
-	case 7: return "Suwako Moriya";
+	case 1: return "秋穰子";
+	case 2: return "键山雏";
+	case 3: return "河城荷取";
+	case 4: return "射命丸文";
+	case 5: return "东风谷早苗";
+	case 6: return "八坂神奈子";
+	case 7: return "洩矢诹访子";
 	default: return "";
 	}
 }

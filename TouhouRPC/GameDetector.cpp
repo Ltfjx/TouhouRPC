@@ -2,7 +2,10 @@
 #include <iostream>
 #include <string>
 
+
 #include "Log.h"
+#include "TextOutput.h"
+
 
 bool findRunningTouhouProcess(const ProcessNameGamePair processList[], PROCESSENTRY32W& processEntry, SupportedGame& processGame)
 {
@@ -84,6 +87,7 @@ std::unique_ptr<TouhouBase> initializeTouhouGame(bool initLogSilence)
         }
 
         logSystem->print(Log::LOG_INFO, "Supported game found: %s", thGame->getGameName());
+        gameName=thGame->getGameName();
         logSystem->print(Log::LOG_DEBUG, "Supported game process name: \"%S\", PID: %d", pe32.szExeFile, pe32.th32ProcessID);
 
         if (thGame->isLinkedToProcess())
@@ -100,6 +104,9 @@ std::unique_ptr<TouhouBase> initializeTouhouGame(bool initLogSilence)
     else
     {
         if (!initLogSilence) logSystem->print(Log::LOG_WARNING, "No supported game currently running. Waiting for a game to be launched...");
+        std::fstream fout("E:\\OBS_Scene\\THRPC_Output.txt", std::fstream::out);
+        fout << "游戏未运行";
+        fout << std::flush; fout.close();
         return {};
     }
 }

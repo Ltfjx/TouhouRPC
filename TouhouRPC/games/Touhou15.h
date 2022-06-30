@@ -37,7 +37,7 @@ public:
 
 	// Inherited from TouhouBase
 	int64_t getClientId() const override { return 712067916862062633; };
-	const char* getGameName() const override { return "Touhou 15 - Legacy of Lunatic Kingdom"; }
+	const char* getGameName() const override { return "東方紺珠伝　～ Legacy of Lunatic Kingdom."; }
 
 	void readDataFromGameProcess() override;
 	void setSmallImageInfo(std::string& icon, std::string& text) const override;

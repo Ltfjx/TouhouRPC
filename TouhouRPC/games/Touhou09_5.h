@@ -13,7 +13,7 @@ public:
 
 	// Inherited from TouhouBase
 	int64_t getClientId() const override { return 725634084050829352; };
-	const char* getGameName() const override { return "Touhou 09.5 - Shoot the Bullet"; }
+	const char* getGameName() const override { return "東方文花帖　～ Shoot the Bullet."; }
 
 	void readDataFromGameProcess() override;
 

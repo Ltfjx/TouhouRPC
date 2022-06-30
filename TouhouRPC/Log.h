@@ -4,6 +4,8 @@
 #include <time.h>
 #include <windows.h>
 #include <iostream>
+#include <string>
+#include <string>
 
 class Log {
     // Singleton class used to setup the log files and prints to console/log files.
@@ -72,3 +74,4 @@ private:
 
 // Global instance pointer
 extern Log* logSystem;
+

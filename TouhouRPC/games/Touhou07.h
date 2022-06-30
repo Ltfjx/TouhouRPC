@@ -13,7 +13,7 @@ public:
 
 	// Inherited from TouhouBase
 	int64_t getClientId() const override { return 711300438867312692; };
-	const char* getGameName() const override { return "Touhou 07 - Perfect Cherry Blossom"; }
+	const char* getGameName() const override { return "東方妖々夢　～ Perfect Cherry Blossom."; }
 
 	void readDataFromGameProcess() override;
 

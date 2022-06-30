@@ -269,13 +269,13 @@ std::string Touhou15::getMidbossName() const
 {
 	switch (stage)
 	{
-	case 1: return "Seiran";
-	case 2: return "Ringo";
-	case 3: return "Doremy Sweet";
-	case 4: return "Sagume Kishin";
-	case 5: return "Clownpiece";
-	case 6: return "Junko";
-	case 7: return "Doremy Sweet";
+	case 1: return "清兰";
+	case 2: return "铃瑚";
+	case 3: return "哆来咪·苏伊特";
+	case 4: return "稀神探女";
+	case 5: return "克劳恩皮丝";
+	case 6: return "纯狐";
+	case 7: return "哆来咪·苏伊特";
 	default: return "";
 	}
 }
@@ -284,20 +284,20 @@ std::string Touhou15::getBossName() const
 {
 	switch (stage)
 	{
-	case 1: return "Seiran";
-	case 2: return "Ringo";
-	case 3: return "Doremy Sweet";
-	case 4: return "Sagume Kishin";
-	case 5: return "Clownpiece";
-	case 6: return "Junko";
+	case 1: return "清兰";
+	case 2: return "铃瑚";
+	case 3: return "哆来咪·苏伊特";
+	case 4: return "稀神探女";
+	case 5: return "克劳恩皮丝";
+	case 6: return "纯狐";
 	case 7:
 	{
 		switch (extraBossState)
 		{
-		case JUNKO_AND_HECATIA: return "Junko & Hecatia Lapislazuli";
-		case JUNKO: return "Junko";
+		case JUNKO_AND_HECATIA: return "纯狐 & 赫卡提亚";
+		case JUNKO: return "纯狐";
 		default:
-		case HECATIA: return "Hecatia Lapislazuli";
+		case HECATIA: return "赫卡提亚";
 		}
 	}
 	default: return "";

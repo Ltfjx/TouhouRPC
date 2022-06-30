@@ -1,4 +1,4 @@
-﻿#include "Touhou07.h"
+#include "Touhou07.h"
 #include <iostream>
 
 namespace Touhou07
@@ -176,14 +176,14 @@ std::string Touhou07::getMidbossName() const
 {
 	switch (stage)
 	{
-	case 1: return "Cirno";
-	case 2: return "Chen";
-	case 3: return "Alice Margatroid";
-	case 4: return "Lily White";
+	case 1: return "琪露诺";
+	case 2: return "橙";
+	case 3: return "爱丽丝";
+	case 4: return "莉莉霍瓦特";
 	case 5:
-	case 6: return "Youmu Konpaku";
-	case 7: return "Chen";
-	case 8: return "Ran Yakumo";
+	case 6: return "魂魄妖梦";
+	case 7: return "橙";
+	case 8: return "八云蓝";
 	default: return "";
 	}
 }
@@ -192,14 +192,14 @@ std::string Touhou07::getBossName() const
 {
 	switch (stage)
 	{
-	case 1: return "Letty Whiterock";
-	case 2: return "Chen";
-	case 3: return "Alice Margatroid";
-	case 4: return "Prismriver Sisters";
-	case 5: return "Youmu Konpaku";
-	case 6: return "Yuyuko Saigyouji";
-	case 7: return "Ran Yakumo";
-	case 8: return "Yukari Yakumo";
+	case 1: return "蕾蒂·霍瓦特洛克";
+	case 2: return "橙";
+	case 3: return "爱丽丝";
+	case 4: return "骚灵三姐妹";
+	case 5: return "魂魄妖梦";
+	case 6: return "西行寺幽幽子";
+	case 7: return "八云蓝";
+	case 8: return "八云紫";
 	default: return "";
 	}
 }

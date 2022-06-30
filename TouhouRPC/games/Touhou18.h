@@ -65,7 +65,7 @@ public:
 
 	// Inherited from TouhouBase
 	int64_t getClientId() const override { return 823266075659599892; };
-	const char* getGameName() const override { return "Touhou 18 - Unconnected Marketeers"; }
+	const char* getGameName() const override { return "東方虹龍洞　～ Unconnected Marketeers."; }
 
 	void readDataFromGameProcess() override;
 

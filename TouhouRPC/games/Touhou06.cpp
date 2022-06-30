@@ -218,13 +218,13 @@ std::string Touhou06::getMidbossName() const
 {
 	switch (stage)
 	{
-	case 1: return "Rumia";
-	case 2: return "Daiyousei";
-	case 3: return "Hong Meiling";
-	case 4: return "Koakuma";
+	case 1: return "露米娅";
+	case 2: return "大妖精";
+	case 3: return "红美铃";
+	case 4: return "小恶魔";
 	case 5:
-	case 6: return "Sakuya Izayoi";
-	case 7: return "Patchouli Knowledge";
+	case 6: return "十六夜咲夜";
+	case 7: return "帕秋莉·诺蕾姬";
 	default: return "";
 	}
 }
@@ -233,13 +233,13 @@ std::string Touhou06::getBossName() const
 {
 	switch (stage)
 	{
-	case 1: return "Rumia";
-	case 2: return "Cirno";
-	case 3: return "Hong Meiling";
-	case 4: return "Patchouli Knowledge";
-	case 5: return "Sakuya Izayoi";
-	case 6: return "Remilia Scarlet";
-	case 7: return "Flandre Scarlet";
+	case 1: return "露米娅";
+	case 2: return "琪露诺";
+	case 3: return "红美铃";
+	case 4: return "帕秋莉·诺蕾姬";
+	case 5: return "十六夜咲夜";
+	case 6: return "蕾米莉亚·斯卡蕾特";
+	case 7: return "芙兰朵露·斯卡蕾特";
 	default: return "";
 	}
 }

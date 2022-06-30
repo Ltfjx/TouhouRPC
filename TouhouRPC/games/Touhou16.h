@@ -24,7 +24,7 @@ public:
 
 	// Inherited from TouhouBase
 	int64_t getClientId() const override { return 712067956481458197; };
-	const char* getGameName() const override { return "Touhou 16 - Hidden Stars in Four Seasons"; }
+	const char* getGameName() const override { return "東方天空璋　～ Hidden Star in Four Seasons."; }
 
 	void readDataFromGameProcess() override;
 

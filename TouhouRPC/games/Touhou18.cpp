@@ -221,9 +221,9 @@ std::string Touhou18Trial::getMidbossName() const
 {
 	switch (stage)
 	{
-	case 1: return "Mike Goutokuji";
-	case 2: return "Takane Yamashiro";
-	case 3: return "Sannyo Komakusa";
+	case 1: return "豪德寺三花";
+	case 2: return "山城高岭";
+	case 3: return "驹草山如";
 	default: return "";
 	}
 }
@@ -232,9 +232,9 @@ std::string Touhou18Trial::getBossName() const
 {
 	switch (stage)
 	{
-	case 1: return "Mike Goutokuji";
-	case 2: return "Takane Yamashiro";
-	case 3: return "Sannyo Komakusa";
+	case 1: return "豪德寺三花";
+	case 2: return "山城高岭";
+	case 3: return "驹草山如";
 	default: return "";
 	}
 }
@@ -492,13 +492,13 @@ std::string Touhou18::getMidbossName() const
 {
 	switch (stage)
 	{
-	case 1: return "Mike Goutokuji";
-	case 2: return "Takane Yamashiro";
-	case 3: return "Sannyo Komakusa";
-	case 4: return "Giant Yin-Yang";
+	case 1: return "豪德寺三花";
+	case 2: return "山城高岭";
+	case 3: return "驹草山如";
+	case 4: return "阴阳玉";
 	case 5:
 	case 6:
-	case 7: return "Tsukasa Kudamaki";
+	case 7: return "菅牧典";
 	default: return "";
 	}
 }
@@ -507,13 +507,13 @@ std::string Touhou18::getBossName() const
 {
 	switch (stage)
 	{
-	case 1: return "Mike Goutokuji";
-	case 2: return "Takane Yamashiro";
-	case 3: return "Sannyo Komakusa";
-	case 4: return "Misumaru Tamatsukuri";
-	case 5: return "Megumu Iizunamaru";
-	case 6: return "Chimata Tenkyuu";
-	case 7: return "Momoyo Himemushi";
+	case 1: return "豪德寺三花";
+	case 2: return "山城高岭";
+	case 3: return "驹草山如";
+	case 4: return "玉造魅须丸";
+	case 5: return "饭纲丸龙";
+	case 6: return "天弓千亦";
+	case 7: return "姬虫百百世";
 	default: return "";
 	}
 }

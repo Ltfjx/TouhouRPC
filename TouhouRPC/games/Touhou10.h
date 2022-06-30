@@ -13,7 +13,7 @@ public:
 
 	// Inherited from TouhouBase
 	int64_t getClientId() const override { return 716759035571077171; };
-	const char* getGameName() const override { return "Touhou 10 - Mountain of Faith"; }
+	const char* getGameName() const override { return "東方風神録　～ Mountain of Faith."; }
 
 	void readDataFromGameProcess() override;
 

@@ -205,6 +205,7 @@
     <ClCompile Include="includes\discord-rpc\voice_manager.cpp" />
     <ClCompile Include="Log.cpp" />
     <ClCompile Include="TouhouRPC.cpp" />
+    <ClCompile Include="TextOutput.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Config.h" />
@@ -248,6 +249,7 @@
     <ClInclude Include="includes\discord-rpc\user_manager.h" />
     <ClInclude Include="includes\discord-rpc\voice_manager.h" />
     <ClInclude Include="Log.h" />
+    <ClInclude Include="TextOutput.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="config.ini" />

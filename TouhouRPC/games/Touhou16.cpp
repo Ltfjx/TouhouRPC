@@ -254,13 +254,13 @@ std::string Touhou16::getMidbossName() const
 {
 	switch (stage)
 	{
-	case 1: return "Eternity Larva";
-	case 2: return "Nemuno Sakata";
-	case 3: return "Lily White";
-	case 4: return "Mai Teireida";
-	case 5: return "Satono Nishida";
+	case 1: return "爱塔妮缇拉尔瓦";
+	case 2: return "坂田合欢";
+	case 3: return "莉莉霍瓦特";
+	case 4: return "丁礼田舞";
+	case 5: return "尔子田里乃";
 	// case 6: none
-	case 7: return "Mai Teireida & Satono Nishida";
+	case 7: return "尔子田里乃 & 丁礼田舞";
 	default: return "";
 	}
 }
@@ -269,13 +269,13 @@ std::string Touhou16::getBossName() const
 {
 	switch (stage)
 	{
-	case 1: return "Eternity Larva";
-	case 2: return "Nemuno Sakata";
-	case 3: return "Aunn Komano";
-	case 4: return "Narumi Yatadera";
-	case 5: return "Mai Teireida & Satono Nishida";
+	case 1: return "爱塔妮缇拉尔瓦";
+	case 2: return "坂田合欢";
+	case 3: return "莉莉霍瓦特";
+	case 4: return "矢田寺成美";
+	case 5: return "尔子田里乃 & 丁礼田舞";
 	case 6:
-	case 7: return "Okina Matara";
+	case 7: return "摩多罗隐岐奈";
 	default: return "";
 	}
 }
